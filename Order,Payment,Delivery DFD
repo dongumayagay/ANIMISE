@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-07-22T17:51:03.987Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="iwUsYTfeDkXoafRxlf7O" version="20.2.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-07-22T17:51:46.785Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="lm8FRsbdX3tvFNQEkrlJ" version="20.2.0" type="github">
   <diagram id="gIDTRk6yX75HB0uuAeSl" name="Page-1">
     <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -37,11 +37,6 @@
         </mxCell>
         <mxCell id="zAzdyT7Lvuwmko18Nnq6-7" value="Website" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="345" y="320" width="160" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="zAzdyT7Lvuwmko18Nnq6-8" value="Product informations" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.001;entryY=0.836;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=#e1d5e7;strokeColor=#9673a6;entryPerimeter=0;exitX=-0.021;exitY=0.83;exitDx=0;exitDy=0;exitPerimeter=0;strokeWidth=2;" edge="1" parent="1" source="zAzdyT7Lvuwmko18Nnq6-19" target="zAzdyT7Lvuwmko18Nnq6-16">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="660" y="420" as="sourcePoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="zAzdyT7Lvuwmko18Nnq6-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;jumpStyle=gap;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;sourcePerimeterSpacing=-1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="zAzdyT7Lvuwmko18Nnq6-11" target="zAzdyT7Lvuwmko18Nnq6-13">
           <mxGeometry relative="1" as="geometry" />
