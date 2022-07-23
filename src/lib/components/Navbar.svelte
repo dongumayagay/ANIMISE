@@ -1,14 +1,11 @@
 <script>
-	import { navbarHeight } from '$lib/store/constants';
 	import logo_title from '$lib/assets/logo-title.svg';
 	let scrollY;
 </script>
 
 <svelte:window bind:scrollY />
 
-<nav
-	class={` bg-white h-[${navbarHeight.mobile}rem] sm:h-[${navbarHeight.sm}rem] py-3 px-4 sticky top-0 inset-x-0 flex items-center shadow`}
->
+<nav class={` bg-white h-16 sm:h-20 py-3 px-4 sticky top-0 inset-x-0 flex items-center shadow-md`}>
 	<div class="flex-1 mr-auto">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
