@@ -1,6 +1,6 @@
 <script>
 	import { navbarHeight } from '$lib/store/constants';
-	import logo_title from '/logo-title.svg';
+	import logo_title from '$lib/assets/logo-title.svg';
 	let scrollY;
 </script>
 
