@@ -1,0 +1,104 @@
+<script>
+	import { blur, fly } from 'svelte/transition';
+	import banner1 from '$lib/assets/banners/banner (1).jpg';
+	import banner2 from '$lib/assets/banners/banner (2).jpg';
+	import banner3 from '$lib/assets/banners/banner (3).jpg';
+	import banner4 from '$lib/assets/banners/banner (4).jpg';
+	import banner5 from '$lib/assets/banners/banner (5).jpg';
+
+	const text = [
+		'Ghost Fighter',
+		'Hunter x Hunter',
+		'Slipes',
+		'Polo-shirts',
+		'The Great Pretenders'
+	];
+
+	const images = [banner1, banner2, banner3, banner4, banner5];
+	let currentImage = 0;
+	function next() {
+		if (currentImage < images.length - 1) currentImage += 1;
+	}
+	function previous() {
+		if (currentImage > 0) currentImage -= 1;
+	}
+	function setCurrentImage(index) {
+		currentImage = index;
+	}
+</script>
+
+<section class="section">
+	<div class="h-full relative bg-neutral-300 overflow-hidden">
+		{#key currentImage}
+			<img
+				out:blur={{ delay: 200 }}
+				in:blur={{ delay: 600 }}
+				src={images[currentImage]}
+				class="min-h-full min-w-full object-cover"
+				alt=""
+			/>
+
+			<div
+				out:fly={{ duration: 400, y: 100 }}
+				in:fly={{ delay: 1000, y: 100, duration: 800 }}
+				class="absolute inset-x-0 top-1/3 text-center text-white"
+			>
+				<h2>POPULAR</h2>
+				<h1 class="text-4xl lg:text-5xl">{text[currentImage]}</h1>
+			</div>
+		{/key}
+		<button on:click={previous} class="absolute inset-y-1/2 rounded-full left-4 text-white">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="h-10 aspect-square"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+				stroke-width="1.5"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z"
+				/>
+			</svg>
+		</button>
+		<button on:click={next} class="absolute h-fit inset-y-1/2 rounded-full right-4 text-white">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="h-10 aspect-square"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+				stroke-width="1.5"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
+				/>
+			</svg>
+		</button>
+		<div class=" absolute inset-x-0 top-[85%] flex justify-center space-x-2">
+			{#each images as image, index}
+				<button on:click={() => setCurrentImage(index)}>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="aspect-square h-5 text-white "
+						class:fill-white={index == currentImage}
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+						stroke-width="2"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M8 01M12 01M16 01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+						/>
+					</svg>
+				</button>
+			{/each}
+		</div>
+	</div>
+</section>

@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.section {
+		@apply h-screen snap-start pt-16 sm:pt-20;
+	}
+}

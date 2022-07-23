@@ -1,5 +1,5 @@
 <script>
-	import Section from '$lib/components/Section.svelte';
+	import HeroSlideShow from '../lib/components/HeroSlideShow.svelte';
 </script>
 
 <svelte:head>
@@ -7,13 +7,12 @@
 	<meta name="description" content="Anime Merchanise Online Store" />
 </svelte:head>
 
-<Section addClass={'bg-white'}>
-	<main class="container mx-auto pt-8  text-center">
+<HeroSlideShow />
+
+<main class="section">
+	<div class="container mx-auto pt-8  text-center">
 		<h1 class=" font-bold text-3xl md:text-5xl">Welcome to ANIMISE</h1>
 		<p>To be done, we are just in planning stages of the UI, please wait 😞</p>
 		<img class="mx-auto w-full max-w-3xl" src="anime.gif" alt="" />
-	</main>
-</Section>
-<Section addClass={'bg-orange-300'}>
-	<h1>Tae</h1>
-</Section>
+	</div>
+</main>
