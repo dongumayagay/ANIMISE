@@ -11,7 +11,7 @@
 	<main class="container mx-auto pt-8  text-center">
 		<h1 class=" font-bold text-3xl md:text-5xl">Welcome to ANIMISE</h1>
 		<p>To be done, we are just in planning stages of the UI, please wait 😞</p>
-		<img class="mx-auto w-full" src="anime.gif" alt="" />
+		<img class="mx-auto w-full max-w-3xl" src="anime.gif" alt="" />
 	</main>
 </Section>
 <Section addClass={'bg-orange-300'}>
