@@ -17,7 +17,11 @@ module.exports = {
 			// '2xl': '1536px',
 			// => @media (min-width: 1536px) { ... }
 		},
-		extend: {}
+		extend: {
+			colors: {
+				logo_red: '#D0021B'
+			}
+		}
 	},
 	plugins: []
 };

@@ -1,18 +1,30 @@
 <script>
 	import logo_title from '$lib/assets/logo-title.svg';
-	let scrollY;
-	let innerWidth;
+	import NavSidebar from './NavSidebar.svelte';
+
+	let showNavSidebar = false;
+	const navlinks = [
+		{ name: 'NEW', path: '' },
+		{ name: 'SHOP ALL', path: '' },
+		{ name: 'BRANDS', path: '' },
+		{ name: 'CLOTHING', path: '' },
+		{ name: 'ACCESSORIES', path: '' },
+		{ name: 'HOME GOODS', path: '' }
+	];
+	const toggleNavSidebar = () => (showNavSidebar = !showNavSidebar);
+	$: console.log(showNavSidebar);
 </script>
 
-<svelte:window bind:scrollY bind:innerWidth />
-
+{#if showNavSidebar}
+	<NavSidebar {navlinks} bind:showNavSidebar />
+{/if}
 <header class="bg-white h-16 sm:h-20 py-3 px-4 fixed top-0 inset-x-0 z-10 shadow-md flex">
 	<nav class={`flex items-center container mx-auto`}>
-		{#if innerWidth < 1024}
-			<div class="flex-1 mr-auto">
+		<div class="flex-1 mr-auto block lg:hidden">
+			<button on:click={toggleNavSidebar}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="h-6 w-6"
+					class="h-6 w-6 hover:text-logo_red transition-colors duration-500"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -20,39 +32,34 @@
 				>
 					<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
 				</svg>
-			</div>
-		{/if}
+			</button>
+		</div>
 		<img src={logo_title} class=" h-7 sm:h-10" alt="" />
-		{#if innerWidth >= 1024}
-			<div class="flex-1 flex space-x-8 justify-center font-medium">
-				<a href="">NEW</a>
-				<a href="">SHOP ALL</a>
-				<a href="">BRANDS</a>
-				<a href="">CLOTHING</a>
-				<a href="">ACCESSORIES</a>
-				<a href="">HOME GOODS</a>
-			</div>
-		{/if}
-		<div class="flex-1 lg:flex-initial ml-auto justify-end flex space-x-4">
-			{#if innerWidth >= 1024}
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-6 w-6"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-					stroke-width="2"
+		<div class="flex-1 hidden lg:flex space-x-8 justify-center font-medium">
+			{#each navlinks as navlink}
+				<a class="link link-underline link-underline-black text-black" href={navlink.path}
+					>{navlink.name}</a
 				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-					/>
-				</svg>
-			{/if}
+			{/each}
+		</div>
+		<div class="x flex-1 lg:flex-initial ml-auto justify-end flex space-x-4">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				class="h-6 w-6"
+				class="hidden lg:block h-6 w-6 hover:text-logo_red transition-colors duration-500"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+				stroke-width="2"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+				/>
+			</svg>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="h-6 w-6 hover:text-logo_red transition-colors duration-500"
 				fill="none"
 				viewBox="0 0 24 24"
 				stroke="currentColor"
@@ -66,7 +73,7 @@
 			</svg>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				class="h-6 w-6"
+				class="h-6 w-6 hover:text-logo_red transition-colors duration-500"
 				fill="none"
 				viewBox="0 0 24 24"
 				stroke="currentColor"
@@ -81,3 +88,23 @@
 		</div>
 	</nav>
 </header>
+
+<style>
+	.link-underline {
+		border-bottom-width: 0;
+		background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+		background-size: 0 3px;
+		background-position: 0 100%;
+		background-repeat: no-repeat;
+		transition: background-size 0.2s ease-in-out;
+	}
+
+	.link-underline-black {
+		background-image: linear-gradient(transparent, transparent), linear-gradient(#d0021b, #d0021b);
+	}
+
+	.link-underline:hover {
+		background-size: 100% 3px;
+		background-position: 0 100%;
+	}
+</style>
