@@ -7,7 +7,7 @@
 	let showCart = false;
 	const navlinks = [
 		{ name: 'NEW', path: '/under-construction' },
-		{ name: 'SHOP ALL', path: '/under-construction' },
+		{ name: 'SHOP ALL', path: '/shop' },
 		{ name: 'BRANDS', path: '/under-construction' },
 		{ name: 'CLOTHING', path: '/under-construction' },
 		{ name: 'ACCESSORIES', path: '/under-construction' },
@@ -39,7 +39,7 @@
 				</svg>
 			</button>
 		</div>
-		<a href="/">
+		<a svelte href="/">
 			<img src={logo_title} class=" h-7 sm:h-10" alt="" />
 		</a>
 		<div class="flex-1 hidden lg:flex space-x-8 justify-center font-medium">

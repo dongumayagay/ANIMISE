@@ -14,3 +14,6 @@
 </main> -->
 
 <ProductCarousel title={'Trending'} />
+<ProductCarousel title={'New Arrivals'} />
+<ProductCarousel title={'Popular'} />
+<ProductCarousel title={'Best Seller'} />

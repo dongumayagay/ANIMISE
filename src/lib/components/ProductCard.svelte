@@ -1,11 +1,16 @@
 <script>
-	export let product;
+	import placeholder from '$lib/assets/placeholder.svg';
+	export let product = { name: 'Product name', price: 420, image: placeholder };
 </script>
 
-<div class="text-center ">
-	<img src={product.image} class=" w-18 aspect-square" alt="" />
-	<div class="py-4">
-		<h1 class=" text-xl font-light tracking-widest">{product.name}</h1>
-		<h2 class="font-light">₱{product.price}</h2>
+<a href="/product/test" class="text-center flex flex-col ">
+	<img src={product.image} class=" aspect-square w-full" alt="" />
+	<div class=" text-center py-2">
+		<h1
+			class="text-lg sm:text-xl font-light sm:font-normal uppercase tracking-wider whitespace-nowrap text-ellipsis overflow-hidden"
+		>
+			{product.name}
+		</h1>
+		<h2 class="sm:text-lg font-light sm:font-normal text-neutral-500">₱{product.price}</h2>
 	</div>
-</div>
+</a>

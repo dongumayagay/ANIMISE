@@ -4,7 +4,7 @@
 
 @layer components {
 	.section {
-		@apply h-screen snap-start pt-16 sm:pt-20;
+		@apply min-h-full snap-start pt-16 sm:pt-20;
 	}
 	.nav-offset {
 		@apply snap-start pt-16 sm:pt-20;

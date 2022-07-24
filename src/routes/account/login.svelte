@@ -24,6 +24,7 @@
 					name="email"
 					id="email"
 					placeholder="Email Address"
+					required
 				/>
 				<input
 					class="border border-neutral-400 py-2 px-4"
