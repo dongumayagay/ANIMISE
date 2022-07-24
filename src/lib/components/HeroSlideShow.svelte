@@ -6,34 +6,34 @@
 	import banner4 from '$lib/assets/banners/banner (4).jpg';
 	import banner5 from '$lib/assets/banners/banner (5).jpg';
 
-	const text = [
-		'Ghost Fighter',
-		'Hunter x Hunter',
-		'Slipes',
-		'Polo-shirts',
-		'The Great Pretenders'
+	const banners = [
+		{ name: 'Ghost Fighter', image: banner1 },
+		{ name: 'Hunter x Hunter', image: banner2 },
+		{ name: 'Slipes', image: banner3 },
+		{ name: 'Polo-shirts', image: banner4 },
+		{ name: 'The Great Pretenders', image: banner5 }
 	];
 
-	const images = [banner1, banner2, banner3, banner4, banner5];
-	let currentImage = 0;
+	let currentBannerIndex = 0;
+
 	function next() {
-		if (currentImage < images.length - 1) currentImage += 1;
+		if (currentBannerIndex < banners.length - 1) currentBannerIndex += 1;
 	}
 	function previous() {
-		if (currentImage > 0) currentImage -= 1;
+		if (currentBannerIndex > 0) currentBannerIndex -= 1;
 	}
 	function setCurrentImage(index) {
-		currentImage = index;
+		currentBannerIndex = index;
 	}
 </script>
 
 <section class="section">
 	<div class="h-full relative bg-neutral-300 overflow-hidden">
-		{#key currentImage}
+		{#key currentBannerIndex}
 			<img
 				out:blur={{ delay: 200 }}
 				in:blur={{ delay: 600 }}
-				src={images[currentImage]}
+				src={banners[currentBannerIndex].image}
 				class="min-h-full min-w-full object-cover"
 				alt=""
 			/>
@@ -44,7 +44,7 @@
 				class="absolute inset-x-0 top-1/3 text-center text-white"
 			>
 				<h2>POPULAR</h2>
-				<h1 class="text-4xl lg:text-5xl">{text[currentImage]}</h1>
+				<h1 class="text-4xl lg:text-5xl">{banners[currentBannerIndex].name}</h1>
 			</div>
 		{/key}
 		<button on:click={previous} class="absolute inset-y-1/2 rounded-full left-4 text-white">
@@ -80,12 +80,12 @@
 			</svg>
 		</button>
 		<div class=" absolute inset-x-0 top-[85%] flex justify-center space-x-2">
-			{#each images as image, index}
+			{#each banners as banner, index}
 				<button on:click={() => setCurrentImage(index)}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						class="aspect-square h-5 text-white "
-						class:fill-white={index == currentImage}
+						class:fill-white={index == currentBannerIndex}
 						fill="none"
 						viewBox="0 0 24 24"
 						stroke="currentColor"
