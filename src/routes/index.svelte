@@ -2,11 +2,6 @@
 	import HeroSlideShow from '../lib/components/HeroSlideShow.svelte';
 </script>
 
-<svelte:head>
-	<title>ANIMISE</title>
-	<meta name="description" content="Anime Merchanise Online Store" />
-</svelte:head>
-
 <HeroSlideShow />
 
 <main class="section">
