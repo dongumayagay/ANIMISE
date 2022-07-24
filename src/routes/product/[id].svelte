@@ -5,7 +5,7 @@
 	export let product = { name: 'Product name', price: 420, image: placeholder };
 </script>
 
-<section class="section ">
+<section class="navbar-offset min-h-full ">
 	<main class="container mx-auto flex flex-col sm:flex-row sm:py-16">
 		<div class="snap-x snap-mandatory  aspect-square  flex overflow-x-auto px-3 gap-x-3">
 			<img src={placeholder} class=" snap-center aspect-square w-full bg-blue-400" />
