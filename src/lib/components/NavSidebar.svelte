@@ -34,7 +34,7 @@
 		<ul class="px-4 flex flex-col gap-y-2">
 			{#each navlinks as navlink}
 				<li class="border-b-2 py-2">
-					<a class="text-lg " href={navlink.path}>{navlink.name}</a>
+					<a class="text-lg " on:click={toggleNavSidebar} href={navlink.path}>{navlink.name}</a>
 				</li>
 			{/each}
 			<a class=" mt-4 text-lg" href="/account">Account</a>
