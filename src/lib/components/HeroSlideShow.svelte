@@ -1,5 +1,5 @@
 <script>
-	import { blur, fly } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import banner1 from '$lib/assets/banners/banner (1).jpg';
 	import banner2 from '$lib/assets/banners/banner (2).jpg';
 	import banner3 from '$lib/assets/banners/banner (3).jpg';
@@ -28,20 +28,21 @@
 </script>
 
 <section class="section">
-	<div class="h-full relative bg-neutral-300 overflow-hidden">
+	<div class="h-full relative bg-black overflow-hidden">
 		{#key currentBannerIndex}
 			<img
-				out:blur={{ delay: 200 }}
-				in:blur={{ delay: 600 }}
+				out:fade|local
+				in:fade|local={{ delay: 400 }}
 				src={banners[currentBannerIndex].image}
-				class="min-h-full min-w-full object-cover"
+				draggable="false"
+				class="min-h-full min-w-full object-cover select-none"
 				alt=""
 			/>
 
 			<div
-				out:fly={{ duration: 400, y: 100 }}
-				in:fly={{ delay: 1000, y: 100, duration: 800 }}
-				class="absolute inset-x-0 top-1/3 text-center text-white"
+				out:fly|local={{ y: 100 }}
+				in:fly={{ delay: 400, y: 100 }}
+				class="absolute inset-x-0 top-1/3 text-center text-white "
 			>
 				<h2>POPULAR</h2>
 				<h1 class="text-4xl lg:text-5xl">{banners[currentBannerIndex].name}</h1>
