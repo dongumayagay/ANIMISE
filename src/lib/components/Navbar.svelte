@@ -15,7 +15,6 @@
 	];
 	const toggleNavSidebar = () => (showNavSidebar = !showNavSidebar);
 	const toggleCart = () => (showCart = !showCart);
-	$: console.log(showNavSidebar);
 </script>
 
 {#if showNavSidebar}
@@ -51,7 +50,7 @@
 			{/each}
 		</div>
 		<div class="x flex-1 lg:flex-initial ml-auto justify-end flex space-x-4">
-			<a href="/under-construction" title="Account">
+			<a href="/account" title="Account">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="hidden lg:block h-6 w-6 hover:text-logo_red transition-colors duration-500"

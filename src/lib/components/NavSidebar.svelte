@@ -37,7 +37,7 @@
 					<a class="text-lg " on:click={toggleNavSidebar} href={navlink.path}>{navlink.name}</a>
 				</li>
 			{/each}
-			<a class=" mt-4 text-lg" href="/account">Account</a>
+			<a class=" mt-4 text-lg" on:click={toggleNavSidebar} href="/account">Account</a>
 		</ul>
 		<footer
 			class="mt-auto border-t border-black p-4 flex justify-evenly items-center bg-black fill-white"

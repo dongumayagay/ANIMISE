@@ -1,6 +1,7 @@
 <script>
 	import { fade, fly } from 'svelte/transition';
 	import ItemCart from './ItemCart.svelte';
+	import { cartItems } from '$lib/store.js';
 	export let showCart;
 	let itemExample = {
 		name: 'Kanino ka lang?',
@@ -8,7 +9,7 @@
 		quantity: 69,
 		image: 'https://via.placeholder.com/150'
 	};
-	let cartItems = [itemExample];
+	$cartItems = [itemExample];
 
 	const toggleCart = () => (showCart = !showCart);
 </script>
@@ -40,15 +41,17 @@
 			</button>
 		</header>
 		<ul class="px-4 flex flex-col gap-y-2">
-			{#each cartItems as cartItem, index}
+			{#each $cartItems as cartItem, index}
 				<ItemCart item={cartItem} />
 			{:else}
 				{'No Item :('}
 			{/each}
 		</ul>
-		{#if cartItems.length != 0}
+		{#if $cartItems.length != 0}
 			<footer class="mt-auto border-t px-4 py-6">
-				<button class="text-lg uppercase bg-indigo-700 text-white w-full py-3">Checkout</button>
+				<button class="text-lg uppercase bg-black text-white tracking-widest w-full py-3"
+					>Checkout</button
+				>
 			</footer>
 		{/if}
 	</nav>

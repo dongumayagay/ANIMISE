@@ -6,6 +6,9 @@
 	.section {
 		@apply h-screen snap-start pt-16 sm:pt-20;
 	}
+	.nav-offset {
+		@apply snap-start pt-16 sm:pt-20;
+	}
 }
 @layer utilities {
 	input[type='number']::-webkit-inner-spin-button,
