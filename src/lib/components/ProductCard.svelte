@@ -1,9 +1,9 @@
 <script>
 	import placeholder from '$lib/assets/placeholder.svg';
-	export let product = { name: 'Product name', price: 420, image: placeholder };
+	export let product = { id: 0, name: 'Product name', price: 420, image: placeholder };
 </script>
 
-<a href="/product/test" class="text-center flex flex-col ">
+<a href={`/product/${product.id}`} class="text-center flex flex-col ">
 	<img src={product.image} class=" aspect-square w-full" alt="" />
 	<div class=" text-center py-2">
 		<h1

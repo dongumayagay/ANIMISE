@@ -6,7 +6,7 @@
 	.section {
 		@apply min-h-full h-full snap-start pt-16 sm:pt-20;
 	}
-	.nav-offset {
+	.navbar-offset {
 		@apply snap-start pt-16 sm:pt-20;
 	}
 }

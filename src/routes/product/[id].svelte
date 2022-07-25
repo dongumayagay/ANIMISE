@@ -1,21 +1,58 @@
 <script>
-	// import { page } from '$app/stores';
-	// const id = $page.params.id;
-	import placeholder from '$lib/assets/placeholder.svg';
-	export let product = { name: 'Product name', price: 420, image: placeholder };
+	import { page } from '$app/stores';
+	import products from '$lib/products.json';
+	import { cart, showCart } from '$lib/stores';
+	// import placeholder from '$lib/assets/placeholder.svg';
+	// export let product = { name: 'Product name', price: 420, image: placeholder };
+
+	const id = $page.params.id;
+	const product = products[id - 1];
+
+	function addToCart() {
+		const index = $cart.findIndex((cartitem) => cartitem.id === product.id);
+		if (index === -1) {
+			const cartItem = {
+				id: product.id,
+				name: product.name,
+				price: product.price,
+				image: product.image,
+				quantity: 1
+			};
+			$cart = [...$cart, cartItem];
+		} else {
+			$cart[index].quantity += 1;
+			$cart = $cart;
+		}
+		console.log($cart);
+		$showCart = true;
+	}
 </script>
 
 <section class="navbar-offset min-h-full ">
-	<main class="container mx-auto flex flex-col md:flex-row sm:py-16 outline">
+	<main class="container mx-auto flex flex-col md:flex-row sm:py-16 ">
 		<div class="snap-x flex-1 snap-mandatory aspect-square flex overflow-x-auto px-3 gap-x-3">
-			<img src={placeholder} class=" snap-center aspect-square w-full bg-blue-400" />
-			<img src={placeholder} class=" snap-center aspect-square w-full bg-red-400" />
-			<img src={placeholder} class=" snap-center aspect-square w-full bg-green-400" />
+			<img
+				src={product.image}
+				alt={product.name}
+				class=" snap-center aspect-square w-full bg-blue-400"
+			/>
+			<img
+				src={product.image}
+				alt={product.name}
+				class=" snap-center aspect-square w-full bg-red-400"
+			/>
+			<img
+				src={product.image}
+				alt={product.name}
+				class=" snap-center aspect-square w-full bg-green-400"
+			/>
 		</div>
 		<div class="p-4 flex-1 flex flex-col gap-2">
 			<h1 class="text-2xl font-light tracking-wider">{product.name}</h1>
 			<h2 class="">₱{product.price}</h2>
-			<button class="bg-black text-white w-full py-3 px-4 text-lg">Add to cart</button>
+			<button on:click={addToCart} class="bg-black text-white w-full py-3 px-4 text-lg"
+				>Add to cart</button
+			>
 			<article class="py-4">
 				<h1 class="border-b text-xl font-light">Product Details</h1>
 				<p>

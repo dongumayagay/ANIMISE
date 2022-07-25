@@ -1,5 +1,5 @@
 <script>
-	import { userSession } from '$lib/store';
+	import { userSession } from '$lib/stores';
 	import MyAddress from '../../lib/components/MyAddress.svelte';
 	import MyOrders from '../../lib/components/MyOrders.svelte';
 	import { goto } from '$app/navigation';
@@ -9,7 +9,7 @@
 	}
 </script>
 
-<section class="navbar-offset snap-end min-h-[80%] h-4/5">
+<section class="navbar-offset min-h-[80%] h-4/5">
 	<main class="container mx-auto h-full">
 		{#if $userSession}
 			<div class=" px-4 py-8">

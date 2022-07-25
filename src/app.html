@@ -5,6 +5,15 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
+		<style>
+			body {
+				min-height: 100vh;
+				min-height: -webkit-fill-available;
+			}
+			html {
+				height: -webkit-fill-available;
+			}
+		</style>
 	</head>
 	<body class="h-full">
 		<div class="h-full">%sveltekit.body%</div>

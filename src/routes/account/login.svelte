@@ -1,5 +1,5 @@
 <script>
-	import { userSession } from '$lib/store';
+	import { userSession } from '$lib/stores';
 	import { goto } from '$app/navigation';
 	function submitHandler(event) {
 		const formData = new FormData(event.target);

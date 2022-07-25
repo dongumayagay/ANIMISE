@@ -1,5 +1,21 @@
 <script>
+	import { cart } from '$lib/stores';
 	export let item;
+
+	function removeItem(id) {
+		$cart = $cart.filter((value) => value.id !== id);
+	}
+
+	function saveCart() {
+		if (item.quantity > 99) item.quantity = 99;
+		else if (item.quantity < 1) item.quantity = 1;
+		$cart = [...$cart];
+	}
+
+	function addqty(toadd) {
+		item.quantity += toadd;
+		saveCart();
+	}
 </script>
 
 <div class="flex py-4">
@@ -13,7 +29,7 @@
 		<h1 class="flex-1">₱{item.price}</h1>
 		<div class="flex gap-x-4 sm:gap-x-0 sm:gap-y-4 sm:flex-col">
 			<div class="flex-1 flex border">
-				<button class="flex-1 flex justify-center text-neutral-600 py-1"
+				<button on:click={() => addqty(-1)} class="flex-1 flex justify-center text-neutral-600 py-1"
 					><svg
 						xmlns="http://www.w3.org/2000/svg"
 						class="h-6 w-6"
@@ -26,11 +42,14 @@
 					</svg></button
 				>
 				<input
+					on:blur={saveCart}
 					class="sm:text-lg w-0 flex-grow-[2] text-center"
 					type="number"
-					value={item.quantity}
+					min="1"
+					max="99"
+					bind:value={item.quantity}
 				/>
-				<button class="flex-1 flex justify-center text-neutral-600 py-1"
+				<button on:click={() => addqty(1)} class="flex-1 flex justify-center text-neutral-600 py-1"
 					><svg
 						xmlns="http://www.w3.org/2000/svg"
 						class="h-6 w-6"
@@ -43,7 +62,9 @@
 					</svg></button
 				>
 			</div>
-			<button class="flex justify-center gap-2 sm:border sm:py-1 border-black"
+			<button
+				on:click={() => removeItem(item.id)}
+				class="flex justify-center gap-2 sm:border sm:py-1 border-black sm:hover:bg-black sm:hover:text-white transition-colors"
 				><svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-6 w-6"

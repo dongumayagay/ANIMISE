@@ -2,9 +2,9 @@
 	import logo_title from '$lib/assets/logo-title.svg';
 	import Cart from './Cart.svelte';
 	import NavSidebar from './NavSidebar.svelte';
-
+	import { showCart } from '$lib/stores';
 	let showNavSidebar = false;
-	let showCart = false;
+
 	const navlinks = [
 		{ name: 'NEW', path: '/under-construction' },
 		{ name: 'SHOP ALL', path: '/shop' },
@@ -14,14 +14,13 @@
 		{ name: 'HOME GOODS', path: '/under-construction' }
 	];
 	const toggleNavSidebar = () => (showNavSidebar = !showNavSidebar);
-	const toggleCart = () => (showCart = !showCart);
 </script>
 
 {#if showNavSidebar}
 	<NavSidebar {navlinks} bind:showNavSidebar />
 {/if}
-{#if showCart}
-	<Cart bind:showCart />
+{#if $showCart}
+	<Cart />
 {/if}
 <header class="bg-white h-16 sm:h-20 py-3 px-4 sticky top-0 inset-x-0 z-10 shadow-md flex">
 	<nav class="flex items-center container mx-auto">
@@ -82,7 +81,7 @@
 					/>
 				</svg>
 			</button>
-			<button on:click={toggleCart} title="Cart">
+			<button on:click={() => ($showCart = !$showCart)} title="Cart">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-6 w-6 hover:text-logo_red transition-colors duration-500"

@@ -42,10 +42,14 @@
 			<div
 				out:fly|local={{ y: 100 }}
 				in:fly={{ delay: 400, y: 100 }}
-				class="absolute inset-x-0 top-1/3 text-center text-white "
+				class="absolute inset-x-0 top-1/3 text-center text-white flex flex-col items-center gap-y-4"
 			>
 				<h2>POPULAR</h2>
 				<h1 class="text-4xl lg:text-5xl">{banners[currentBannerIndex].name}</h1>
+				<a
+					class="border-2 py-3 px-5 bg-white text-black hover:bg-transparent hover:text-white"
+					href="/shop">SHOP NOW</a
+				>
 			</div>
 		{/key}
 		<button on:click={previous} class="absolute inset-y-1/2 rounded-full left-4 text-white">
