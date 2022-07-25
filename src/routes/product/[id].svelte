@@ -6,13 +6,13 @@
 </script>
 
 <section class="navbar-offset min-h-full ">
-	<main class="container mx-auto flex flex-col sm:flex-row sm:py-16">
-		<div class="snap-x snap-mandatory  aspect-square  flex overflow-x-auto px-3 gap-x-3">
+	<main class="container mx-auto flex flex-col md:flex-row sm:py-16 outline">
+		<div class="snap-x flex-1 snap-mandatory aspect-square flex overflow-x-auto px-3 gap-x-3">
 			<img src={placeholder} class=" snap-center aspect-square w-full bg-blue-400" />
 			<img src={placeholder} class=" snap-center aspect-square w-full bg-red-400" />
 			<img src={placeholder} class=" snap-center aspect-square w-full bg-green-400" />
 		</div>
-		<div class="p-4 flex flex-col gap-2">
+		<div class="p-4 flex-1 flex flex-col gap-2">
 			<h1 class="text-2xl font-light tracking-wider">{product.name}</h1>
 			<h2 class="">₱{product.price}</h2>
 			<button class="bg-black text-white w-full py-3 px-4 text-lg">Add to cart</button>
