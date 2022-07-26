@@ -4,7 +4,12 @@
 	function submitHandler(event) {
 		const formData = new FormData(event.target);
 		const data = Object.fromEntries(formData);
-		$userSession = { email: data.email };
+		$userSession = {
+			name: data.name,
+			address: data.address,
+			email: data.email,
+			password: data.password
+		};
 		goto('/account');
 	}
 </script>
@@ -20,11 +25,25 @@
 				<p>Please fill in the information below</p>
 				<input
 					class="border border-neutral-400 py-2 px-4"
+					type="text"
+					name="name"
+					id="name"
+					placeholder="Full name"
+				/>
+				<input
+					class="border border-neutral-400 py-2 px-4"
+					type="text"
+					name="address"
+					id="address"
+					placeholder="Address"
+				/>
+
+				<input
+					class="border border-neutral-400 py-2 px-4"
 					type="email"
 					name="email"
 					id="email"
 					placeholder="Email Address"
-					required
 				/>
 				<input
 					class="border border-neutral-400 py-2 px-4"
