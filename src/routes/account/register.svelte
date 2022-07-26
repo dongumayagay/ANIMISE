@@ -1,16 +1,23 @@
 <script>
-	import { userSession } from '$lib/stores';
+	import { userSession, listUsers } from '$lib/stores';
 	import { goto } from '$app/navigation';
 	function submitHandler(event) {
 		const formData = new FormData(event.target);
 		const data = Object.fromEntries(formData);
+
 		$userSession = {
 			name: data.name,
 			address: data.address,
 			email: data.email,
 			password: data.password
 		};
-		goto('/account');
+		const index = $listUsers.findIndex((user) => user.email === data.email);
+		if (index === -1) {
+			$listUsers = [...$listUsers, $userSession];
+			goto('/account');
+		} else {
+			alert('email already registered');
+		}
 	}
 </script>
 

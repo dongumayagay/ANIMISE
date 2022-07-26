@@ -4,7 +4,7 @@
 	import Account from '../../lib/components/Account.svelte';
 </script>
 
-<section class="navbar-offset min-h-[80%] h-4/5">
+<section class="navbar-offset h-full">
 	<main class="container mx-auto h-full">
 		{#if $userSession}
 			<Account />

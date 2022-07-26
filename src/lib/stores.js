@@ -13,9 +13,14 @@ export let totalAmountCart = derived(cart, (cart) =>
 	cart.reduce((acc, obj) => acc + obj.price * obj.quantity, 0)
 );
 
+const storedListUsers = JSON.parse(browser && localStorage.getItem('listUsers')) || [];
+export const listUsers = writable(browser && storedListUsers);
+listUsers.subscribe((val) => browser && (localStorage.listUsers = JSON.stringify(val)));
+
+const storedUserOrders = JSON.parse(browser && localStorage.getItem('userOrders')) || [];
+export const userOrders = writable(browser && storedUserOrders);
+userOrders.subscribe((val) => browser && (localStorage.userOrders = JSON.stringify(val)));
+
 export let showCart = writable(false);
-// export let userDetails = writable();
-// export let cart = writable([]);
-// export let userSession = writable();
 export let myOrders = writable([]);
 export let myAddress = writable([]);

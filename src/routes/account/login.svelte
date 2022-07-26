@@ -1,11 +1,22 @@
 <script>
-	import { userSession } from '$lib/stores';
+	import { userSession, listUsers } from '$lib/stores';
 	import { goto } from '$app/navigation';
 	function submitHandler(event) {
 		const formData = new FormData(event.target);
 		const data = Object.fromEntries(formData);
-		$userSession = { email: data.email };
-		goto('/account');
+
+		const index = $listUsers.findIndex((user) => user.email === data.email);
+		if (index === -1) {
+			alert('your email and/or password is incorrect');
+		} else {
+			const user = $listUsers[index];
+			if (user.password === data.password) {
+				$userSession = user;
+				goto('/account');
+			} else {
+				alert('your email or password is incorrect');
+			}
+		}
 	}
 </script>
 

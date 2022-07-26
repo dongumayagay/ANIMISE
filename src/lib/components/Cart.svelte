@@ -1,15 +1,42 @@
 <script>
 	import { fade, fly } from 'svelte/transition';
 	import ItemCart from './ItemCart.svelte';
-	import { cart, showCart, totalAmountCart } from '$lib/stores.js';
+	import { goto } from '$app/navigation';
+	import { cart, showCart, totalAmountCart, userSession, userOrders } from '$lib/stores.js';
 	import aqua from '$lib/assets/anime-cute.gif';
-	let itemExample = {
-		name: 'Kanino ka lang?',
-		price: 420,
-		quantity: 69,
-		image: 'https://via.placeholder.com/150'
-	};
+
+	// let itemExample = {
+	// 	name: 'Kanino ka lang?',
+	// 	price: 420,
+	// 	quantity: 69,
+	// 	image: 'https://via.placeholder.com/150'
+	// };
 	// $cart = [itemExample];
+
+	function submitHandler() {
+		const orders = $cart.map((cartItem) => {
+			return {
+				...cartItem,
+				order_date: new Date().toLocaleString()
+			};
+		});
+		const index = $userOrders.findIndex((order) => order.owner === $userSession.email);
+		if (index === -1) {
+			$userOrders = [
+				...$userOrders,
+				{
+					owner: $userSession.email,
+					orders
+				}
+			];
+		} else {
+			$userOrders[index].orders = [...$userOrders[index].orders, ...orders];
+		}
+
+		$showCart = !$showCart;
+		goto('/account');
+		$cart = [];
+	}
 </script>
 
 <div
@@ -49,10 +76,22 @@
 			{/each}
 		</ul>
 		{#if $cart.length != 0}
-			<footer class="mt-auto border-t px-4 py-6">
-				<button class=" uppercase bg-black text-white tracking-widest w-full py-3"
-					>Checkout ● ₱{$totalAmountCart}</button
-				>
+			<footer class="mt-auto border-t flex p-2">
+				{#if $userSession}
+					<a
+						on:click={submitHandler}
+						href="/"
+						class="py-2 uppercase bg-black text-white tracking-wider w-full text-center"
+						>Checkout ● ₱{$totalAmountCart}</a
+					>
+				{:else}
+					<a
+						on:click={() => ($showCart = !$showCart)}
+						href="/account/login"
+						class="py-2 uppercase bg-black text-white tracking-wider w-full text-center"
+						>Login to Checkout ● ₱{$totalAmountCart}</a
+					>
+				{/if}
 			</footer>
 		{/if}
 	</nav>
