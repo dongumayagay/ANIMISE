@@ -31,21 +31,9 @@
 <section class="navbar-offset min-h-full ">
 	<main class="container mx-auto flex flex-col md:flex-row sm:py-16 ">
 		<div class="snap-x flex-1 snap-mandatory aspect-square flex overflow-x-auto px-3 gap-x-3">
-			<img
-				src={product.image}
-				alt={product.name}
-				class=" snap-center aspect-square w-full bg-blue-400"
-			/>
-			<img
-				src={product.image}
-				alt={product.name}
-				class=" snap-center aspect-square w-full bg-red-400"
-			/>
-			<img
-				src={product.image}
-				alt={product.name}
-				class=" snap-center aspect-square w-full bg-green-400"
-			/>
+			<img src={product.image} alt={product.name} class=" snap-center aspect-square w-full 	" />
+			<img src={product.image} alt={product.name} class=" snap-center aspect-square w-full 	" />
+			<img src={product.image} alt={product.name} class=" snap-center aspect-square w-full 	" />
 		</div>
 		<div class="p-4 flex-1 flex flex-col gap-2">
 			<h1 class="text-2xl font-light tracking-wider">{product.name}</h1>

@@ -1,5 +1,5 @@
 <footer
-	class=" bg-black text-white flex flex-col md:flex-row gap-y-8 md:gap-x-16 border-t-2 py-16 px-8 md:px-16"
+	class=" bg-black text-white flex flex-col md:flex-row gap-y-8 md:gap-x-16 border-t-2 py-16 lg:py-24 px-8 md:px-16"
 >
 	<article class="flex-1">
 		<h1 class="text-xl font-medium pb-2">About Animise</h1>
