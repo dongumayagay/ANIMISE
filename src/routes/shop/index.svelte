@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = false;
+</script>
+
 <script>
 	import ProductCard from '$lib/components/ProductCard.svelte';
 	import products from '$lib/products.json';

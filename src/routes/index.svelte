@@ -1,9 +1,17 @@
+<script context="module">
+	export const prerender = false;
+</script>
+
 <script>
 	import HeroSlideShow from '../lib/components/HeroSlideShow.svelte';
 	import ProductCarousel from '../lib/components/ProductCarousel.svelte';
 </script>
 
 <HeroSlideShow />
+<ProductCarousel title={'Trending'} />
+<ProductCarousel title={'New Arrivals'} />
+<ProductCarousel title={'Popular'} />
+<ProductCarousel title={'Best Seller'} />
 
 <!-- <main class="section">
 	<div class="container mx-auto pt-8  text-center">
@@ -12,8 +20,3 @@
 		<img class="mx-auto w-full max-w-3xl" src="anime.gif" alt="" />
 	</div>
 </main> -->
-
-<ProductCarousel title={'Trending'} />
-<ProductCarousel title={'New Arrivals'} />
-<ProductCarousel title={'Popular'} />
-<ProductCarousel title={'Best Seller'} />

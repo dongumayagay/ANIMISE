@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = false;
+</script>
+
 <script>
 	import stop from '$lib/assets/stop.png';
 </script>
