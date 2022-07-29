@@ -3,7 +3,7 @@
 	export let product = { id: 0, name: 'Product name', price: 420, image: placeholder };
 </script>
 
-<a href={`/product/${product.id}`} class="text-center flex flex-col ">
+<a sveltekit:prefetch href={`/product/${product.id}`} class="text-center flex flex-col ">
 	<img src={product.image} class=" aspect-square w-full" alt="" />
 	<div class=" text-center py-2">
 		<h1

@@ -24,7 +24,9 @@
 			</div>
 		</div>
 	</div>
-	<a href="/shop" class="bg-black text-white text-sm py-2 px-4 uppercase"> View all products </a>
+	<a sveltekit:prefetch href="/shop" class="bg-black text-white text-sm py-2 px-4 uppercase">
+		View all products
+	</a>
 </section>
 
 <style>

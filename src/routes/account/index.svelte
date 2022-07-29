@@ -14,9 +14,19 @@
 				<div class="flex flex-col items-center gap-y-2">
 					<h1 class="text-2xl">You're not logged-in</h1>
 					<div class="flex flex-col items-center sm:flex-row sm:gap-x-2">
-						<a class="bg-black text-white px-4 py-1 uppercase" href="/account/login"> signin </a>
+						<a
+							sveltekit:prefetch
+							class="bg-black text-white px-4 py-1 uppercase"
+							href="/account/login"
+						>
+							signin
+						</a>
 						or
-						<a class="bg-black text-white px-4 py-1 uppercase" href="/account/register">signup</a>
+						<a
+							sveltekit:prefetch
+							class="bg-black text-white px-4 py-1 uppercase"
+							href="/account/register">signup</a
+						>
 					</div>
 					to continue
 				</div>

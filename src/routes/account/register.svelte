@@ -64,7 +64,7 @@
 				>
 				<p>
 					Already have an account?
-					<a class="font-bold" href="/account/login"> Login </a>
+					<a sveltekit:prefetch class="font-bold" href="/account/login"> Login </a>
 				</p>
 			</form>
 		</div>

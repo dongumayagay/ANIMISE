@@ -38,18 +38,20 @@
 				</svg>
 			</button>
 		</div>
-		<a svelte href="/">
+		<a sveltekit:prefetch href="/">
 			<img src={logo_title} class=" h-7 sm:h-10" alt="" />
 		</a>
 		<div class="flex-1 hidden lg:flex space-x-8 justify-center font-medium">
 			{#each navlinks as navlink}
-				<a class="link link-underline link-underline-black text-black" href={navlink.path}
-					>{navlink.name}</a
+				<a
+					sveltekit:prefetch
+					class="link link-underline link-underline-black text-black"
+					href={navlink.path}>{navlink.name}</a
 				>
 			{/each}
 		</div>
 		<div class="x flex-1 lg:flex-initial ml-auto justify-end flex space-x-4">
-			<a href="/account" title="Account">
+			<a sveltekit:prefetch href="/account" title="Account">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="hidden lg:block h-6 w-6 hover:text-logo_red transition-colors duration-500"

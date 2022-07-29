@@ -34,10 +34,14 @@
 		<ul class="px-4 flex flex-col gap-y-2">
 			{#each navlinks as navlink}
 				<li class="border-b-2 py-2">
-					<a class="text-lg " on:click={toggleNavSidebar} href={navlink.path}>{navlink.name}</a>
+					<a sveltekit:prefetch class="text-lg " on:click={toggleNavSidebar} href={navlink.path}
+						>{navlink.name}</a
+					>
 				</li>
 			{/each}
-			<a class=" mt-4 text-lg" on:click={toggleNavSidebar} href="/account">Account</a>
+			<a sveltekit:prefetch class=" mt-4 text-lg" on:click={toggleNavSidebar} href="/account"
+				>Account</a
+			>
 		</ul>
 		<footer
 			class="mt-auto border-t border-black p-4 flex justify-evenly items-center bg-black fill-white"

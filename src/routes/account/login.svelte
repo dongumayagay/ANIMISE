@@ -46,7 +46,7 @@
 				<button class="bg-black text-white py-2 px-4 tracking-wider" type="submit">LOGIN</button>
 				<p>
 					Don't have have and account?
-					<a class="font-bold" href="/account/register"> Create one </a>
+					<a sveltekit:prefetch href="/account/register" class="font-bold"> Create one </a>
 				</p>
 			</form>
 		</div>
