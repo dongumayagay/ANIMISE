@@ -18,7 +18,9 @@
 	}
 </script>
 
-<div class="flex py-4">
+<div
+	class="flex py-4  border border-neutral-200 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+>
 	<div class="h-[100px] md:h-[150px] aspect-square">
 		<img src={item.image} class=" object-cover w-full" alt="" />
 	</div>
@@ -64,7 +66,7 @@
 			</div>
 			<button
 				on:click={() => removeItem(item.id)}
-				class="flex justify-center gap-2 sm:border sm:py-1 border-black sm:hover:bg-black sm:hover:text-white transition-colors"
+				class="flex justify-center gap-2 sm:border sm:py-1 text-white border border-black bg-black hover:bg-white hover:text-black transition-colors"
 				><svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-6 w-6"

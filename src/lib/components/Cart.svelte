@@ -4,7 +4,8 @@
 	import { goto } from '$app/navigation';
 	import { cart, showCart, totalAmountCart, userSession, userOrders } from '$lib/stores.js';
 	import aqua from '$lib/assets/anime-cute.gif';
-
+	import { db } from '$lib/firebaseClient';
+	import { writeBatch, serverTimestamp, collection, doc } from 'firebase/firestore';
 	// let itemExample = {
 	// 	name: 'Kanino ka lang?',
 	// 	price: 420,
@@ -13,30 +14,60 @@
 	// };
 	// $cart = [itemExample];
 
-	function submitHandler() {
-		const orders = $cart.map((cartItem) => {
-			return {
-				...cartItem,
-				order_date: new Date().toLocaleString()
-			};
-		});
-		const index = $userOrders.findIndex((order) => order.owner === $userSession.email);
-		if (index === -1) {
-			$userOrders = [
-				...$userOrders,
-				{
-					owner: $userSession.email,
-					orders
-				}
-			];
-		} else {
-			$userOrders[index].orders = [...$userOrders[index].orders, ...orders];
-		}
+	async function submitHandler() {
+		try {
+			const batch = writeBatch(db);
+			const userOrdersRef = collection(db, 'userOrders');
+			const orders = $cart.map((cartItem) => {
+				return {
+					owner: $userSession.uid,
+					product_id: cartItem.id,
+					product_image: cartItem.image,
+					product_name: cartItem.name,
+					product_price: cartItem.price,
+					order_quantity: cartItem.quantity,
+					order_total: cartItem.quantity * cartItem.price,
+					order_date: serverTimestamp()
+				};
+			});
 
-		$showCart = !$showCart;
-		goto('/account');
-		$cart = [];
+			orders.forEach((orderItem) => {
+				const orderRef = doc(userOrdersRef);
+				batch.set(orderRef, orderItem);
+			});
+			await batch.commit();
+			$showCart = !$showCart;
+			goto('/account');
+			$cart = [];
+		} catch (error) {
+			console.log(error);
+			alert(error.code);
+		}
 	}
+	// function submitHandler() {
+	// 	const orders = $cart.map((cartItem) => {
+	// 		return {
+	// 			...cartItem,
+	// 			order_date: new Date().toLocaleString()
+	// 		};
+	// 	});
+	// 	const index = $userOrders.findIndex((order) => order.owner === $userSession.email);
+	// 	if (index === -1) {
+	// 		$userOrders = [
+	// 			...$userOrders,
+	// 			{
+	// 				owner: $userSession.email,
+	// 				orders
+	// 			}
+	// 		];
+	// 	} else {
+	// 		$userOrders[index].orders = [...$userOrders[index].orders, ...orders];
+	// 	}
+
+	// 	$showCart = !$showCart;
+	// 	goto('/account');
+	// 	$cart = [];
+	// }
 </script>
 
 <div
@@ -65,7 +96,7 @@
 				</svg>
 			</button>
 		</header>
-		<ul class="px-4 flex flex-col gap-y-2">
+		<ul class="px-4 py-2 flex flex-col gap-y-2">
 			{#each $cart as cartItem}
 				<ItemCart item={cartItem} />
 			{:else}
@@ -81,14 +112,14 @@
 					<a
 						on:click={submitHandler}
 						href="/"
-						class="py-2 uppercase bg-black text-white tracking-wider w-full text-center"
+						class="py-2 uppercase tracking-wider w-full text-center  text-white border border-black bg-black hover:bg-white hover:text-black transition-opacity"
 						>Checkout ● ₱{$totalAmountCart}</a
 					>
 				{:else}
 					<a
 						on:click={() => ($showCart = !$showCart)}
 						href="/account/login"
-						class="py-2 uppercase bg-black text-white tracking-wider w-full text-center"
+						class="py-2 uppercase tracking-wider w-full text-center  text-white border border-black bg-black hover:bg-white hover:text-black transition-opacity"
 						>Login to Checkout ● ₱{$totalAmountCart}</a
 					>
 				{/if}

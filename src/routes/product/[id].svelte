@@ -34,7 +34,9 @@
 
 <section class="navbar-offset min-h-full ">
 	<main class="container mx-auto flex flex-col md:flex-row sm:py-16 ">
-		<div class="snap-x flex-1 snap-mandatory aspect-square flex overflow-x-auto px-3 gap-x-3">
+		<div
+			class="snap-x flex-1 snap-mandatory aspect-square flex overflow-x-auto px-3 gap-x-3 items-center"
+		>
 			<img src={product.image} alt={product.name} class=" snap-center aspect-square w-full 	" />
 			<img src={product.image} alt={product.name} class=" snap-center aspect-square w-full 	" />
 			<img src={product.image} alt={product.name} class=" snap-center aspect-square w-full 	" />
@@ -42,7 +44,9 @@
 		<div class="p-4 flex-1 flex flex-col gap-2">
 			<h1 class="text-2xl font-light tracking-wider">{product.name}</h1>
 			<h2 class="">₱{product.price}</h2>
-			<button on:click={addToCart} class="bg-black text-white w-full py-3 px-4 text-lg"
+			<button
+				on:click={addToCart}
+				class="w-full py-3 px-4 text-lg  text-white border border-black bg-black hover:bg-white hover:text-black transition-colors"
 				>Add to cart</button
 			>
 			<article class="py-4">
