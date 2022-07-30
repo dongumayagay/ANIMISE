@@ -2,8 +2,10 @@
 	export let item;
 </script>
 
-<div class="flex mt-4 gap-x-4">
-	<div class=" grid place-items-center ">
+<div
+	class="flex mt-4 gap-x-4 border border-neutral-200 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+>
+	<div class=" grid place-items-center">
 		<img
 			src={item.product_image}
 			class="h-[100px] md:h-[150px] aspect-square object-cover w-full"

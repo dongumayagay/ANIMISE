@@ -96,7 +96,7 @@
 				</svg>
 			</button>
 		</header>
-		<ul class="px-4 flex flex-col gap-y-2">
+		<ul class="px-4 py-2 flex flex-col gap-y-2">
 			{#each $cart as cartItem}
 				<ItemCart item={cartItem} />
 			{:else}
@@ -112,14 +112,14 @@
 					<a
 						on:click={submitHandler}
 						href="/"
-						class="py-2 uppercase bg-black text-white tracking-wider w-full text-center"
+						class="py-2 uppercase tracking-wider w-full text-center  text-white border border-black bg-black hover:bg-white hover:text-black transition-opacity"
 						>Checkout ● ₱{$totalAmountCart}</a
 					>
 				{:else}
 					<a
 						on:click={() => ($showCart = !$showCart)}
 						href="/account/login"
-						class="py-2 uppercase bg-black text-white tracking-wider w-full text-center"
+						class="py-2 uppercase tracking-wider w-full text-center  text-white border border-black bg-black hover:bg-white hover:text-black transition-opacity"
 						>Login to Checkout ● ₱{$totalAmountCart}</a
 					>
 				{/if}

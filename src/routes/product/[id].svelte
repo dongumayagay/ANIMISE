@@ -44,7 +44,9 @@
 		<div class="p-4 flex-1 flex flex-col gap-2">
 			<h1 class="text-2xl font-light tracking-wider">{product.name}</h1>
 			<h2 class="">₱{product.price}</h2>
-			<button on:click={addToCart} class="bg-black text-white w-full py-3 px-4 text-lg"
+			<button
+				on:click={addToCart}
+				class="w-full py-3 px-4 text-lg  text-white border border-black bg-black hover:bg-white hover:text-black transition-colors"
 				>Add to cart</button
 			>
 			<article class="py-4">
