@@ -1,16 +1,28 @@
 <script>
 	import { userSession, userOrders } from '$lib/stores';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import OrderItem from './OrderItem.svelte';
+	import { db } from '$lib/firebaseClient';
+	import { collection, query, where, onSnapshot } from 'firebase/firestore';
 
 	let orders = [];
-	onMount(() => {
-		const index = $userOrders.findIndex((order) => order.owner === $userSession.email);
-		if (index !== -1) {
-			const userOrder = $userOrders[index].orders;
-			orders = [...userOrder];
-		}
+	const q = query(collection(db, 'userOrders'), where('owner', '==', $userSession.uid));
+	const unsubscribe = onSnapshot(q, (querySnapshot) => {
+		// querySnapshot.forEach((doc) => {
+		// 	orders.push(doc.data());
+		// });
+		orders = [...querySnapshot.docs.map((doc) => doc.data())];
 	});
+
+	onDestroy(() => unsubscribe());
+	// onMount(() => {
+	// 	const index = $userOrders.findIndex((order) => order.owner === $userSession.email);
+	// 	if (index !== -1) {
+	// 		const userOrder = $userOrders[index].orders;
+	// 		orders = [...userOrder];
+	// 	}
+	// });
+	$: console.log(orders);
 </script>
 
 <div class="">

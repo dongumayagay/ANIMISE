@@ -34,7 +34,9 @@
 
 <section class="navbar-offset min-h-full ">
 	<main class="container mx-auto flex flex-col md:flex-row sm:py-16 ">
-		<div class="snap-x flex-1 snap-mandatory aspect-square flex overflow-x-auto px-3 gap-x-3">
+		<div
+			class="snap-x flex-1 snap-mandatory aspect-square flex overflow-x-auto px-3 gap-x-3 items-center"
+		>
 			<img src={product.image} alt={product.name} class=" snap-center aspect-square w-full 	" />
 			<img src={product.image} alt={product.name} class=" snap-center aspect-square w-full 	" />
 			<img src={product.image} alt={product.name} class=" snap-center aspect-square w-full 	" />
