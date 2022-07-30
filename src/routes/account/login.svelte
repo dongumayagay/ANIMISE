@@ -5,21 +5,35 @@
 <script>
 	import { userSession, listUsers } from '$lib/stores';
 	import { goto } from '$app/navigation';
-	function submitHandler(event) {
+	import { auth } from '$lib/firebaseClient.js';
+	import { signInWithEmailAndPassword } from 'firebase/auth';
+
+	// function submitHandler(event) {
+	// 	const formData = new FormData(event.target);
+	// 	const data = Object.fromEntries(formData);
+
+	// 	const index = $listUsers.findIndex((user) => user.email === data.email);
+	// 	if (index === -1) {
+	// 		alert('your email and/or password is incorrect');
+	// 	} else {
+	// 		const user = $listUsers[index];
+	// 		if (user.password === data.password) {
+	// 			$userSession = user;
+	// 			goto('/account');
+	// 		} else {
+	// 			alert('your email or password is incorrect');
+	// 		}
+	// 	}
+	// }
+	async function submitHandler(event) {
 		const formData = new FormData(event.target);
 		const data = Object.fromEntries(formData);
-
-		const index = $listUsers.findIndex((user) => user.email === data.email);
-		if (index === -1) {
-			alert('your email and/or password is incorrect');
-		} else {
-			const user = $listUsers[index];
-			if (user.password === data.password) {
-				$userSession = user;
-				goto('/account');
-			} else {
-				alert('your email or password is incorrect');
-			}
+		try {
+			const userCredential = await signInWithEmailAndPassword(auth, data.email, data.password);
+			goto('/account');
+		} catch (error) {
+			console.log(error);
+			alert(error.code);
 		}
 	}
 </script>

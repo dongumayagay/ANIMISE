@@ -2,9 +2,14 @@
 	import { userSession } from '$lib/stores';
 	import { goto } from '$app/navigation';
 	import MyOrders from '$lib/components/MyOrders.svelte';
-
+	import { auth } from '$lib/firebaseClient.js';
+	import { signOut } from 'firebase/auth';
+	// function submitHandler() {
+	// 	$userSession = null;
+	// 	goto('/account');
+	// }
 	function submitHandler() {
-		$userSession = null;
+		signOut(auth);
 		goto('/account');
 	}
 </script>
@@ -32,7 +37,7 @@
 	<div class=" py-4 flex w-full justify-between">
 		<div>
 			<h1 class="text-2xl tracking-widest">MY ACCOUNT</h1>
-			<p>Welcome back, {$userSession.name}!</p>
+			<p>Welcome back, {$userSession.displayName}!</p>
 		</div>
 		<button class=" flex gap-x-1 items-center"
 			><svg
