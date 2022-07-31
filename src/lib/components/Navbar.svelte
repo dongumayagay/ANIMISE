@@ -22,7 +22,7 @@
 {#if $showCart}
 	<Cart />
 {/if}
-<header class="bg-white h-16 sm:h-20 py-3 px-4 sticky top-0 inset-x-0 z-10 shadow-md flex">
+<header class="bg-white h-16 sm:h-20 py-3 px-4 fixed top-0 inset-x-0 z-10 shadow-md flex">
 	<nav class="flex items-center container mx-auto">
 		<div class="flex-1 mr-auto block lg:hidden">
 			<button on:click={toggleNavSidebar}>
