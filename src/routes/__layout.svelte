@@ -28,7 +28,7 @@
 	<meta name="description" content="Anime Merchanise Online Store" />
 </svelte:head>
 
-<main class="h-full  bg-white snap-y">
+<main class="h-full  bg-white snap-y overflow-x-hidden">
 	<Navbar />
 	<slot />
 	<Footer />

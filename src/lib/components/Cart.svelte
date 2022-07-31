@@ -73,7 +73,7 @@
 <div
 	in:fade|local={{ duration: 100 }}
 	out:fade|local={{ duration: 100, delay: 100 }}
-	class="fixed inset-0 h-full w-screen z-20 bg-black/40"
+	class="fixed inset-0 h-full w-full z-20 bg-black/40 overflow-x-hidden"
 	on:click|self={() => ($showCart = !$showCart)}
 >
 	<nav
