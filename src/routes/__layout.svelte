@@ -5,6 +5,7 @@
 	import { userSession } from '$lib/stores';
 	import { auth } from '$lib/firebaseClient.js';
 	import { onAuthStateChanged } from 'firebase/auth';
+	import CustomerSupport from '../lib/components/CustomerSupport.svelte';
 	onAuthStateChanged(auth, (user) => {
 		// if (user) {
 		// 	// User is signed in, see docs for a list of available properties
@@ -27,10 +28,11 @@
 	<meta name="description" content="Anime Merchanise Online Store" />
 </svelte:head>
 
-<main class="h-full bg-white snap-y overflow-y-scroll">
+<main class="h-full  bg-white snap-y overflow-y-scroll relative">
 	<Navbar />
 	<slot />
 	<Footer />
+	<CustomerSupport />
 </main>
 
 <!-- <div class="bg-orange-300 h-full flex flex-col justify-between">

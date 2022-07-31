@@ -112,14 +112,14 @@
 					<a
 						on:click={submitHandler}
 						href="/"
-						class="py-2 uppercase tracking-wider w-full text-center  text-white border border-black bg-black hover:bg-white hover:text-black transition-opacity"
+						class="py-2 uppercase tracking-wider w-full text-center  text-white border border-black bg-black hover:bg-white hover:text-black transition-colors"
 						>Checkout ● ₱{$totalAmountCart}</a
 					>
 				{:else}
 					<a
 						on:click={() => ($showCart = !$showCart)}
 						href="/account/login"
-						class="py-2 uppercase tracking-wider w-full text-center  text-white border border-black bg-black hover:bg-white hover:text-black transition-opacity"
+						class="py-2 uppercase tracking-wider w-full text-center  text-white border border-black bg-black hover:bg-white hover:text-black transition-colors"
 						>Login to Checkout ● ₱{$totalAmountCart}</a
 					>
 				{/if}
