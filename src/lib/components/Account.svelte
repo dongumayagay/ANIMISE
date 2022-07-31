@@ -14,7 +14,7 @@
 	}
 </script>
 
-<div class="mx-auto  max-w-4xl px-4 py-8">
+<div class=" mx-auto max-w-4xl px-4 py-8">
 	<button
 		on:click={submitHandler}
 		class="flex items-center gap-x-1 text-neutral-500 font-medium text-lg"
