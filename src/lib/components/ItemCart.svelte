@@ -66,7 +66,7 @@
 			</div>
 			<button
 				on:click={() => removeItem(item.id)}
-				class="flex justify-center gap-2 sm:border sm:py-1 text-white border border-black bg-black hover:bg-white hover:text-black transition-colors"
+				class="flex justify-center items-center px-1 rounded-sm gap-2 sm:border sm:py-1 text-white border border-black bg-black hover:bg-white hover:text-black transition-colors"
 				><svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-6 w-6"
