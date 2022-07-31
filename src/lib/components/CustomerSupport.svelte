@@ -1,5 +1,5 @@
 <script>
-	let showCustomerSupport = true;
+	let showCustomerSupport = false;
 </script>
 
 <button
