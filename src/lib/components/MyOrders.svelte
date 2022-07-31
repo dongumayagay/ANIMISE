@@ -27,7 +27,7 @@
 
 <div class="">
 	<h1 class="border-b-2 border-neutral-400 py-2 text-xl">My Orders</h1>
-	<ul class=" max-h-[60vh] px-4 pb-8 outline overflow-y-auto">
+	<ul class=" max-h-[60vh] px-4 pb-8 overflow-y-auto">
 		{#each orders as order}
 			<!-- <li>{JSON.stringify(order)}</li> -->
 			<!-- <li><OrderItem  /></li> -->
