@@ -5,7 +5,7 @@
 	import visa from '../lib/assets/icons/visa.svg';
 </script>
 
-<div class="navbar-offset h-full flex flex-col justify-center">
+<div class="section flex flex-col justify-center">
 	<main class="outline px-8 py text-center flex flex-col">
 		<h1>Choose payment method</h1>
 		<button> GCash </button>

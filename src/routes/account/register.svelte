@@ -65,7 +65,7 @@
 	}
 </script>
 
-<section class="navbar-offset min-h-[80%] h-4/5">
+<section class="h-[80vh]">
 	<main class="container  mx-auto h-full">
 		<div class="h-full grid place-items-center text-center">
 			<form

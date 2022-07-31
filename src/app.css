@@ -8,6 +8,7 @@
 		@apply h-screen;
 	}
 	.navbar-offset {
+		/* @apply snap-start pt-16 sm:pt-20; */
 		@apply snap-start pt-16 sm:pt-20;
 	}
 }
