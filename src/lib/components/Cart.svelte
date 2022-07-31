@@ -73,7 +73,7 @@
 <div
 	in:fade|local={{ duration: 100 }}
 	out:fade|local={{ duration: 100, delay: 100 }}
-	class="fixed inset-0 h-full w-screen z-20 bg-black/40 overflow-hidden"
+	class="fixed inset-0 h-full w-screen z-20 bg-black/40"
 	on:click|self={() => ($showCart = !$showCart)}
 >
 	<nav
@@ -96,7 +96,7 @@
 				</svg>
 			</button>
 		</header>
-		<ul class="px-4 py-2 flex-1 flex flex-col gap-y-2 overflow-y-auto bg-green-400">
+		<ul class="px-4 py-2 flex-1 flex flex-col gap-y-2 overflow-y-auto">
 			{#each $cart as cartItem}
 				<ItemCart item={cartItem} />
 			{:else}
