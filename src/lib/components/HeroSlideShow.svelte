@@ -5,7 +5,7 @@
 	import banner3 from '$lib/assets/banners/banner (3).jpg';
 	import banner4 from '$lib/assets/banners/banner (4).jpg';
 	import banner5 from '$lib/assets/banners/banner (5).jpg';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	const banners = [
 		{ name: 'Ghost Fighter', image: banner1 },
@@ -15,8 +15,10 @@
 		{ name: 'The Great Pretenders', image: banner5 }
 	];
 
+	const slideInterval = 5000;
 	let currentBannerIndex = 0;
-
+	let scrollY;
+	let autoSlide;
 	function next() {
 		if (currentBannerIndex < banners.length - 1) currentBannerIndex += 1;
 		else currentBannerIndex = 0;
@@ -29,9 +31,23 @@
 		currentBannerIndex = index;
 	}
 	onMount(() => {
-		setInterval(next, 5000);
+		autoSlide = setInterval(next, slideInterval);
 	});
+	onDestroy(() => {
+		clearInterval(autoSlide);
+	});
+
+	// $: if (scrollY === 0) {
+	// 	autoSlide = setInterval(next, slideInterval);
+	// }
+	$: if (scrollY > 0) {
+		clearInterval(autoSlide);
+	}
+
+	$: console.log(scrollY);
 </script>
+
+<svelte:window bind:scrollY />
 
 <section class="section">
 	<div class="h-full relative bg-black overflow-hidden">
