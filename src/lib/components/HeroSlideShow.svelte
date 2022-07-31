@@ -5,6 +5,7 @@
 	import banner3 from '$lib/assets/banners/banner (3).jpg';
 	import banner4 from '$lib/assets/banners/banner (4).jpg';
 	import banner5 from '$lib/assets/banners/banner (5).jpg';
+	import { onMount } from 'svelte';
 
 	const banners = [
 		{ name: 'Ghost Fighter', image: banner1 },
@@ -18,13 +19,18 @@
 
 	function next() {
 		if (currentBannerIndex < banners.length - 1) currentBannerIndex += 1;
+		else currentBannerIndex = 0;
 	}
 	function previous() {
 		if (currentBannerIndex > 0) currentBannerIndex -= 1;
+		else currentBannerIndex = banners.length - 1;
 	}
 	function setCurrentImage(index) {
 		currentBannerIndex = index;
 	}
+	onMount(() => {
+		setInterval(next, 5000);
+	});
 </script>
 
 <section class="section">
