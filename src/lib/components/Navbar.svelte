@@ -9,9 +9,9 @@
 		{ name: 'NEW', path: '/under-construction' },
 		{ name: 'SHOP ALL', path: '/shop' },
 		{ name: 'BRANDS', path: '/under-construction' },
-		{ name: 'CLOTHING', path: '/under-construction' },
+		{ name: 'APPARELS', path: '/under-construction' },
 		{ name: 'ACCESSORIES', path: '/under-construction' },
-		{ name: 'HOME GOODS', path: '/under-construction' }
+		{ name: 'COLLECTIBLES', path: '/under-construction' }
 	];
 	const toggleNavSidebar = () => (showNavSidebar = !showNavSidebar);
 </script>
