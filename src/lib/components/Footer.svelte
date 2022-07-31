@@ -46,7 +46,7 @@
 		<h1 class="text-xl font-medium pb-2">Helpful links</h1>
 		<h2>Privacy Policy</h2>
 		<h2>Terms and Condition</h2>
-		<h2>Customer Service</h2>
+		<h2>Customer Support</h2>
 		<h2>Shipping Information</h2>
 	</article>
 	<form class="flex-1 flex flex-col gap-y-2">
