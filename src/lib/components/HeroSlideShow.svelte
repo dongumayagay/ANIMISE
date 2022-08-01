@@ -1,18 +1,18 @@
 <script>
 	import { fade, fly } from 'svelte/transition';
-	import banner1 from '$lib/assets/banners/banner (1).jpg';
-	import banner2 from '$lib/assets/banners/banner (2).jpg';
-	import banner3 from '$lib/assets/banners/banner (3).jpg';
-	import banner4 from '$lib/assets/banners/banner (4).jpg';
-	import banner5 from '$lib/assets/banners/banner (5).jpg';
+	import banner1 from '$lib/assets/banners/banner (1).webp';
+	import banner2 from '$lib/assets/banners/banner (2).webp';
+	import banner3 from '$lib/assets/banners/banner (3).webp';
+	import banner4 from '$lib/assets/banners/banner (4).webp';
+	import banner5 from '$lib/assets/banners/banner (5).webp';
 	import { onDestroy, onMount } from 'svelte';
 
 	const banners = [
-		{ name: 'Ghost Fighter', image: banner1 },
-		{ name: 'Hunter x Hunter', image: banner2 },
-		{ name: 'Slipes', image: banner3 },
-		{ name: 'Polo-shirts', image: banner4 },
-		{ name: 'The Great Pretenders', image: banner5 }
+		{ name: 'Polo-shirts', image: banner1 },
+		{ name: 'The Great Pretenders', image: banner2 },
+		{ name: 'Ghost Fighter', image: banner3 },
+		{ name: 'Hunter x Hunter', image: banner4 },
+		{ name: 'Slippes', image: banner5 }
 	];
 
 	const slideInterval = 5000;
@@ -66,12 +66,12 @@
 			<div
 				out:fly|local={{ y: 100 }}
 				in:fly={{ delay: 400, y: 100 }}
-				class="absolute inset-x-0 top-1/3 text-center text-white flex flex-col items-center gap-y-4"
+				class="absolute inset-x-0 top-1/3 text-center text-white flex flex-col items-center gap-y-4 py-8 bg-gradient-to-r from-transparent via-black to-transparent backdrop-blur-sm"
 			>
 				<h2>POPULAR</h2>
 				<h1 class="text-3xl lg:text-4xl">{banners[currentBannerIndex].name}</h1>
 				<a
-					class="border-2 py-2 px-4 bg-white text-black hover:bg-transparent hover:text-white"
+					class="border-2 py-2 px-4 bg-white text-black  hover:text-white hover:bg-transparent transition"
 					href="/shop">SHOP NOW</a
 				>
 			</div>
