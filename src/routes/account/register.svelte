@@ -1,31 +1,12 @@
 <script context="module">
-	export const prerender = false;
+	export const prerender = true;
 </script>
 
 <script>
-	import { userSession, listUsers } from '$lib/stores';
 	import { goto } from '$app/navigation';
 	import { auth } from '$lib/firebaseClient.js';
 	import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
-	// function submitHandler(event) {
-	// 	const formData = new FormData(event.target);
-	// 	const data = Object.fromEntries(formData);
-
-	// 	$userSession = {
-	// 		name: data.name,
-	// 		address: data.address,
-	// 		email: data.email,
-	// 		password: data.password
-	// 	};
-	// 	const index = $listUsers.findIndex((user) => user.email === data.email);
-	// 	if (index === -1) {
-	// 		$listUsers = [...$listUsers, $userSession];
-	// 		goto('/account');
-	// 	} else {
-	// 		alert('email already registered');
-	// 	}
-	// }
 	async function submitHandler(event) {
 		const formData = new FormData(event.target);
 		const data = Object.fromEntries(formData);
@@ -37,31 +18,6 @@
 			console.log(error);
 			alert(error.code);
 		}
-
-		// .then((userCredential) => {
-		// 	// Signed in
-		// 	const user = userCredential.user;
-		// 	// ...
-		// })
-		// .catch((error) => {
-		// 	const errorCode = error.code;
-		// 	const errorMessage = error.message;
-		// 	// ..
-		// });
-
-		// $userSession = {
-		// 	name: data.name,
-		// 	address: data.address,
-		// 	email: data.email,
-		// 	password: data.password
-		// };
-		// const index = $listUsers.findIndex((user) => user.email === data.email);
-		// if (index === -1) {
-		// 	$listUsers = [...$listUsers, $userSession];
-		// 	goto('/account');
-		// } else {
-		// 	alert('email already registered');
-		// }
 	}
 </script>
 

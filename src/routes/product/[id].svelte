@@ -1,13 +1,11 @@
 <script context="module">
-	export const prerender = false;
+	export const prerender = true;
 </script>
 
 <script>
 	import { page } from '$app/stores';
 	import products from '$lib/products.json';
 	import { cart, showCart } from '$lib/stores';
-	// import placeholder from '$lib/assets/placeholder.svg';
-	// export let product = { name: 'Product name', price: 420, image: placeholder };
 
 	const id = $page.params.id;
 	const product = products[id - 1];

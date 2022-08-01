@@ -8,20 +8,11 @@
 	let orders = [];
 	const q = query(collection(db, 'userOrders'), where('owner', '==', $userSession.uid));
 	const unsubscribe = onSnapshot(q, (querySnapshot) => {
-		// querySnapshot.forEach((doc) => {
-		// 	orders.push(doc.data());
-		// });
 		orders = [...querySnapshot.docs.map((doc) => doc.data())];
 	});
 
 	onDestroy(() => unsubscribe());
-	// onMount(() => {
-	// 	const index = $userOrders.findIndex((order) => order.owner === $userSession.email);
-	// 	if (index !== -1) {
-	// 		const userOrder = $userOrders[index].orders;
-	// 		orders = [...userOrder];
-	// 	}
-	// });
+
 	$: console.log(orders);
 </script>
 

@@ -1,6 +1,6 @@
 <script>
 	import { userSession } from '$lib/stores';
-	import { goto } from '$app/navigation';
+
 	import Account from '../../lib/components/Account.svelte';
 </script>
 

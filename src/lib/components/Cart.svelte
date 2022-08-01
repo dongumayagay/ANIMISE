@@ -44,30 +44,7 @@
 			alert(error.code);
 		}
 	}
-	// function submitHandler() {
-	// 	const orders = $cart.map((cartItem) => {
-	// 		return {
-	// 			...cartItem,
-	// 			order_date: new Date().toLocaleString()
-	// 		};
-	// 	});
-	// 	const index = $userOrders.findIndex((order) => order.owner === $userSession.email);
-	// 	if (index === -1) {
-	// 		$userOrders = [
-	// 			...$userOrders,
-	// 			{
-	// 				owner: $userSession.email,
-	// 				orders
-	// 			}
-	// 		];
-	// 	} else {
-	// 		$userOrders[index].orders = [...$userOrders[index].orders, ...orders];
-	// 	}
 
-	// 	$showCart = !$showCart;
-	// 	goto('/account');
-	// 	$cart = [];
-	// }
 </script>
 
 <div

@@ -4,10 +4,7 @@
 	import MyOrders from '$lib/components/MyOrders.svelte';
 	import { auth } from '$lib/firebaseClient.js';
 	import { signOut } from 'firebase/auth';
-	// function submitHandler() {
-	// 	$userSession = null;
-	// 	goto('/account');
-	// }
+
 	function submitHandler() {
 		signOut(auth);
 		goto('/account');
