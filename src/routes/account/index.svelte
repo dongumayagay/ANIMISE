@@ -4,6 +4,9 @@
 	import Account from '../../lib/components/Account.svelte';
 </script>
 
+<svelte:head>
+	<title>Account | ANIMISE</title>
+</svelte:head>
 {#if $userSession}
 	<section class="navbar-offset h-screen">
 		<main class="container mx-auto">

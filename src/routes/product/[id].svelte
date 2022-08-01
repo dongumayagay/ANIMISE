@@ -30,6 +30,9 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{product.name} | ANIMISE</title>
+</svelte:head>
 <section class="navbar-offset min-h-full ">
 	<main class="container mx-auto flex flex-col md:flex-row sm:py-16 ">
 		<div

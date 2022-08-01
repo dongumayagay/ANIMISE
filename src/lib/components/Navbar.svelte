@@ -6,12 +6,12 @@
 	let showNavSidebar = false;
 
 	const navlinks = [
-		{ name: 'NEW', path: '/under-construction' },
+		{ name: 'NEW', path: '/shop/new arrivals' },
 		{ name: 'SHOP ALL', path: '/shop' },
-		{ name: 'BRANDS', path: '/under-construction' },
-		{ name: 'APPARELS', path: '/under-construction' },
-		{ name: 'ACCESSORIES', path: '/under-construction' },
-		{ name: 'COLLECTIBLES', path: '/under-construction' }
+		{ name: 'BRANDS', path: '/shop/brands' },
+		{ name: 'APPARELS', path: '/shop/apparels' },
+		{ name: 'ACCESSORIES', path: '/shop/accessories' },
+		{ name: 'COLLECTIBLES', path: '/shop/collectibles' }
 	];
 	const toggleNavSidebar = () => (showNavSidebar = !showNavSidebar);
 </script>

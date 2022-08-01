@@ -7,6 +7,10 @@
 	import products from '$lib/products.json';
 </script>
 
+<svelte:head>
+	<title>Shop All | ANIMISE</title>
+</svelte:head>
+
 <section class="min-h-full  snap-start pt-16 sm:pt-20 ">
 	<div class="container mx-auto">
 		<h1 class="text-center text-xl tracking-widest py-8 border-b-2">SHOP ALL</h1>

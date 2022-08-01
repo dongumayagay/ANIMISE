@@ -20,6 +20,9 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Login | ANIMISE</title>
+</svelte:head>
 <section class="h-[80vh]">
 	<main class="container  mx-auto h-full">
 		<div class="h-full grid place-items-center text-center">
