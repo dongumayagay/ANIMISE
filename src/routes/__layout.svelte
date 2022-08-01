@@ -25,7 +25,18 @@
 
 <svelte:head>
 	<title>ANIMISE</title>
-	<meta name="description" content="Anime Merchanise Online Store" />
+	<meta name="description" content="Online Anime-themed Merchanise Store" />
+	<meta name="keywords" content="anime store" />
+	<meta name="keywords" content="online anime store" />
+	<meta name="keywords" content="best anime store" />
+	<meta name="keywords" content="anime store near me" />
+	<meta name="keywords" content="anime store in my area" />
+	<meta name="keywords" content="buy anime merch" />
+	<meta name="keywords" content="buy anime merch online" />
+	<meta name="keywords" content="buy anime merch clothing" />
+	<meta name="keywords" content="buy anime merch apparels" />
+	<meta name="keywords" content="buy anime merch accessories" />
+	<meta name="google-site-verification" content="JBPiZR00Hy-RYRDtXXcEBFQALyNtGGFZjcMbEnJXmyg" />
 </svelte:head>
 
 <main class="h-full  bg-white snap-y overflow-x-hidden">

@@ -39,7 +39,7 @@
 			</button>
 		</div>
 		<a sveltekit:prefetch href="/">
-			<img src={logo_title} class=" h-7 sm:h-10" alt="" />
+			<img src={logo_title} class=" h-7 sm:h-10" alt="animise logo" height />
 		</a>
 		<div class="flex-1 hidden lg:flex space-x-8 justify-center font-medium">
 			{#each navlinks as navlink}
