@@ -57,6 +57,8 @@
 				in:fade|local={{ delay: 400 }}
 				src={banners[currentBannerIndex].image}
 				draggable="false"
+				width="800px"
+				height="450px"
 				class="min-h-full min-w-full object-cover select-none"
 				alt=""
 			/>
@@ -74,7 +76,12 @@
 				>
 			</div>
 		{/key}
-		<button on:click={previous} class="absolute inset-y-1/2 rounded-full left-4 text-white">
+		<button
+			on:click={previous}
+			class="absolute inset-y-1/2 rounded-full left-4 text-white"
+			title="previous banner"
+			aria-label="previous banner"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="h-10 aspect-square"
@@ -90,7 +97,12 @@
 				/>
 			</svg>
 		</button>
-		<button on:click={next} class="absolute h-fit inset-y-1/2 rounded-full right-4 text-white">
+		<button
+			on:click={next}
+			class="absolute h-fit inset-y-1/2 rounded-full right-4 text-white"
+			title="next banner"
+			aria-label="next banner"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="h-10 aspect-square"
@@ -108,7 +120,11 @@
 		</button>
 		<div class=" absolute inset-x-0 top-[85%] flex justify-center space-x-2">
 			{#each banners as banner, index}
-				<button on:click={() => setCurrentImage(index)}>
+				<button
+					on:click={() => setCurrentImage(index)}
+					title={`banner ${index}`}
+					aria-label={`banner ${index}`}
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						class="aspect-square h-4 text-white "

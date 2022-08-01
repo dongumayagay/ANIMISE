@@ -4,6 +4,8 @@
 
 <button
 	on:click={() => (showCustomerSupport = !showCustomerSupport)}
+	title="customer support"
+	aria-label="customer support"
 	class="fixed bottom-[7%] right-[7%] sm:right-[5%] bg-neutral-200 p-3 rounded-full shadow-lg"
 >
 	{#if showCustomerSupport === false}

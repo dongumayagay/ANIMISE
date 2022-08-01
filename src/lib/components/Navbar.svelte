@@ -25,7 +25,11 @@
 <header class="bg-white h-16 sm:h-20 py-3 px-4 fixed top-0 inset-x-0 z-10 shadow-md flex">
 	<nav class="flex items-center container mx-auto">
 		<div class="flex-1 mr-auto block lg:hidden">
-			<button on:click={toggleNavSidebar}>
+			<button
+				on:click={toggleNavSidebar}
+				title="toggle sidebar navigation"
+				aria-label="toggle sidebar navigation"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-6 w-6 hover:text-logo_red transition-colors duration-500"
