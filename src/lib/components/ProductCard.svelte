@@ -4,7 +4,7 @@
 </script>
 
 <a sveltekit:prefetch href={`/product/${product.id}`} class="text-center flex flex-col ">
-	<img src={product.image} class=" aspect-square w-full" alt="" />
+	<img src={product.image} class=" aspect-square w-full" alt="" loading="lazy" />
 	<div class=" text-center py-2">
 		<h1
 			class="text-lg sm:text-xl font-light sm:font-normal uppercase tracking-wider whitespace-nowrap text-ellipsis overflow-hidden"
