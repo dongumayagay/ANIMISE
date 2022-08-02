@@ -3,6 +3,7 @@
 	import Cart from './Cart.svelte';
 	import NavSidebar from './NavSidebar.svelte';
 	import { showCart } from '$lib/stores';
+	import Search from './Search.svelte';
 	let showNavSidebar = false;
 
 	const navlinks = [
@@ -54,7 +55,7 @@
 				>
 			{/each}
 		</div>
-		<div class="x flex-1 lg:flex-initial ml-auto justify-end flex space-x-4">
+		<div class="x flex-1 lg:flex-initial ml-auto justify-end flex gap-x-4">
 			<a sveltekit:prefetch href="/account" title="Account">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -71,22 +72,7 @@
 					/>
 				</svg>
 			</a>
-			<button title="Search">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-6 w-6 hover:text-logo_red transition-colors duration-500"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-					stroke-width="2"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-					/>
-				</svg>
-			</button>
+			<Search />
 			<button on:click={() => ($showCart = !$showCart)} title="Cart">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
