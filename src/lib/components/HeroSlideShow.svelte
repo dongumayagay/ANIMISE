@@ -66,14 +66,16 @@
 			<div
 				out:fly|local={{ y: 100 }}
 				in:fly={{ delay: 400, y: 100 }}
-				class="absolute inset-x-0 top-1/3 text-center text-white flex flex-col items-center gap-y-4 py-8 bg-gradient-to-r from-transparent via-black to-transparent backdrop-blur-sm"
+				class="absolute inset-0 grid place-items-center bg-gradient-to-t from-black"
 			>
-				<h2>POPULAR</h2>
-				<h1 class="text-3xl lg:text-4xl">{banners[currentBannerIndex].name}</h1>
-				<a
-					class="border-2 py-2 px-4 bg-white text-black  hover:text-white hover:bg-transparent transition"
-					href="/shop">SHOP NOW</a
-				>
+				<div class="flex flex-col items-center gap-y-4 text-center text-white">
+					<h2>POPULAR</h2>
+					<h1 class="text-3xl lg:text-4xl">{banners[currentBannerIndex].name}</h1>
+					<a
+						class="border-2 py-2 px-4 bg-white text-black  hover:text-white hover:bg-transparent transition"
+						href="/shop">SHOP NOW</a
+					>
+				</div>
 			</div>
 		{/key}
 		<button

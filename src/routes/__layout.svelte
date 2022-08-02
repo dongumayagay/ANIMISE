@@ -34,8 +34,3 @@
 	<Footer />
 	<CustomerSupport />
 </main>
-
-<!-- <div class="bg-orange-300 h-full flex flex-col justify-between">
-	<h1>tae</h1>
-	<h1>pupu</h1>
-</div> -->
