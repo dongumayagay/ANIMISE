@@ -26,23 +26,6 @@
 	<meta name="keywords" content="buy anime merch apparels" />
 	<meta name="keywords" content="buy anime merch accessories" />
 	<meta name="google-site-verification" content="JBPiZR00Hy-RYRDtXXcEBFQALyNtGGFZjcMbEnJXmyg" />
-	<div id="my-store-77734508" />
-	<div>
-		<script
-			defer
-			data-cfasync="false"
-			type="text/javascript"
-			src="https://app.ecwid.com/script.js?77734508&data_platform=code&data_date=2022-08-03"
-			charset="utf-8"></script><script type="text/javascript">
-			xProductBrowser(
-				'categoriesPerRow=3',
-				'views=grid(20,3) list(60) table(60)',
-				'categoryView=grid',
-				'searchView=list',
-				'id=my-store-77734508'
-			);
-		</script>
-	</div>
 </svelte:head>
 
 <main class="h-full  bg-white snap-y overflow-x-hidden">
