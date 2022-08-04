@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>ANIMISE</title>
+	<title>ANIMISE | Your favorite Animerch store ♥</title>
 	<meta name="description" content="Online Anime-themed Merchanise Store" />
 	<meta name="author" content="Don Gumayagay" />
 	<meta name="keywords" content="anime store" />

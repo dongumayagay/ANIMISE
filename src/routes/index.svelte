@@ -7,10 +7,6 @@
 	import ProductCarousel from '../lib/components/ProductCarousel.svelte';
 </script>
 
-<svelte:head>
-	<title>ANIMISE | Your favorite Animerch store ♥</title>
-</svelte:head>
-
 <HeroSlideShow />
 <ProductCarousel title={'Trending'} />
 <ProductCarousel title={'New Arrivals'} />
