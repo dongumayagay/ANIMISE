@@ -14,6 +14,8 @@
 <svelte:head>
 	<title>ANIMISE | Your favorite Animerch store ♥</title>
 	<meta name="description" content="Online Anime-themed Merchanise Store" />
+	<meta name="og:title" content="ANIMISE:Your Favorite AniMerch Store" />
+	<meta name="og:description" content="Online Anime-themed Merchanise Store" />
 	<meta name="author" content="Don Gumayagay" />
 	<meta name="keywords" content="anime store" />
 	<meta name="keywords" content="online anime store" />
